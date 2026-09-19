@@ -1,8 +1,12 @@
-import { useState } from "react";
+ import { useEffect, useState, } from "react";
 
 
-const UseState = () => {
+ const UseState = () => {
   const [count, setCount] = useState(0);
+
+   useEffect(() =>{
+    console.log("useEggect");
+  },[]);
 
   const handleIncrement = () => {
     setCount(count + 1);
@@ -16,6 +20,7 @@ const UseState = () => {
 
   return (
     <div>
+      {console.log("rendering")}
       <h1>Count: {count}</h1>
       <button onClick={handleIncrement}>Incrices</button>
       <button onClick={handleDecrease}>Decrices</button>
@@ -24,3 +29,5 @@ const UseState = () => {
 };
 
 export default UseState;
+
+
